@@ -39,7 +39,23 @@ public class MainActivity extends AppCompatActivity {
                 //convet feet & inches to meter
                 float height= (float) (feet*0.3048+inch*0.0254);
                 float bmiIndex=weight/(height*height);
-                tvResult.setText("Your BMI Index is: "+bmiIndex);
+
+                if(bmiIndex<18.5){
+                    tvResult.setText("Your BMI Index is: "+bmiIndex+" You are underweight, Please eat more good food");
+                }
+                else if(bmiIndex >= 18.5 && bmiIndex<=24.9 ){
+                    tvResult.setText("Your BMI Index is: "+bmiIndex+" Your weight is perfect keep it up");
+                }
+
+                else if (bmiIndex >=25 && bmiIndex <=29.9){
+                    tvResult.setText("Your BMI Index is: "+bmiIndex+" You are overweight. please reduce your food intake");
+                }
+                else {
+                    tvResult.setText("Your BMI Index is: "+bmiIndex+" You got obesity. You should check you food seriously");
+
+                }
+
+
 
 
 
